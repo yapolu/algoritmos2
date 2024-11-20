@@ -2,9 +2,11 @@
 body {
     margin: 0;
     overflow: hidden;
-    background: linear-gradient(to bottom, #2b1055, #7597de); /* Gradiente azul */
+    background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.picmix.com%2Fstamp%2Fglitter-pink-sparkle-970gif-2292837&psig=AOvVaw09qWZ12juELDA-YZFRT1W7&ust=1732155953600000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMC6pfft6YkDFQAAAAAdAAAAABAQ') no-repeat center center fixed;
+    background-size: cover; /* Ajusta o tamanho do GIF ao fundo */
     height: 100vh;
 }
+
 
 /* Estilo para as estrelas */
 .star {

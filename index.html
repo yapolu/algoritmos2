@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <h3> testedejdbekde</h3>
+    <title>Estrelas Cadentes</title>
+    <!-- Linkando o arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- O fundo será animado pelo CSS/JS -->
+    <script>
+        // Criar estrelas no JavaScript
+        const createStar = () => {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * window.innerWidth + 'px';
+            star.style.animationDuration = Math.random() * 2 + 2 + 's'; // Tempo variável
+            star.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(star);
+
+            // Remover estrela após animação
+            setTimeout(() => {
+                star.remove();
+            }, 4000);
+        };
+
+        // Gerar estrelas continuamente
+        setInterval(createStar, 100);
+    </script>
 </body>
 </html>

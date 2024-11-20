@@ -1,0 +1,30 @@
+/* Estilo global para o corpo */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #2b1055, #7597de); /* Gradiente azul */
+    height: 100vh;
+}
+
+/* Estilo para as estrelas */
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(255,182,193,1) 0%, rgba(255,105,180,1) 50%, rgba(255,20,147,0) 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255,182,193,0.8), 0 0 20px rgba(255,105,180,0.6);
+    animation: fall 2s linear infinite;
+}
+
+/* Animação para as estrelas caindo */
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(50px);
+        opacity: 0;
+    }
+}

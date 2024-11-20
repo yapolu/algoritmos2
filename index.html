@@ -1,32 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrelas Cadentes</title>
-    <!-- Linkando o arquivo CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- O fundo será animado pelo CSS/JS -->
-    <script>
-        // Criar estrelas no JavaScript
-        const createStar = () => {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.left = Math.random() * window.innerWidth + 'px';
-            star.style.animationDuration = Math.random() * 2 + 2 + 's'; // Tempo variável
-            star.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(star);
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Post-it Layout</title>
+  </head>
 
-            // Remover estrela após animação
-            setTimeout(() => {
-                star.remove();
-            }, 4000);
-        };
+  <body>
+    <div class="container">
+      <!-- Post-it -->
+      <div class="post-it">
+        <h1>Notas</h1>
+        <p>Aqui vai o conteúdo do post-it.</p>
+      </div>
 
-        // Gerar estrelas continuamente
-        setInterval(createStar, 100);
-    </script>
-</body>
+      <!-- Conteúdo extra -->
+      <div class="content">
+        <h1>Gabriela da Rocha</h1>
+        <p>Este é o espaço para mais conteúdo.</p>
+      </div>
+    </div>
+  </body>
 </html>

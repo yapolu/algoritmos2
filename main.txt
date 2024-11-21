@@ -1,0 +1,210 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "function.h"
+#include <math.h>
+
+int main() {
+
+    int vetor[TAM], vetorAux[TAM];
+    int opcao;
+    long comparacoes, trocas;
+    int elemento, posicao;
+
+    srand(0);  //inicializa o gerador de numeros aleatorios
+
+    printf("Trabalho de Ordenação e Pesquisa");
+    do {
+        printf("\n");
+        printf("1. Gerar novo vetor aleatório\n");
+        printf("2. Exibir os primeiros elementos do vetor\n");
+        printf("3. Ordenar o vetor (todos os algoritmos)\n");
+        printf("4. Realizar buscas no vetor\n");
+        printf("5. Executar o programa 1000 vezes\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+        printf("\n");
+
+        switch (opcao) {
+            case 1:  //gera um novo vetor
+                gerar_vetor(vetor);  //gera o vetor aleatório
+                printf("Novo vetor gerado!\n");
+                //imprime_vetor(vetor);  // exibe o vetor gerado
+                break;
+
+            case 2:  //exibe os primeiros e últimos elementos do vetor
+                printf("Exibindo, respectivamente, os 10 primeiros e as 10 últimas posições do vetor: \n");
+                exibe_vetor(vetor);  // exibe os primeiros e últimos elementos
+                break;
+
+            case 3:  // ordena o vetor utilizando 3 algoritmos
+                comparacoes = trocas = 0;
+                printf("\nOrdenação com Selection Sort \n");
+                copia_vetor(vetor, vetorAux);  //faz uma copia do vetor original
+                SelectionSort(vetorAux, &comparacoes, &trocas);  //ordena c selectionsort
+                //imprime_vetor(vetorAux);  // exibe o vetor ordenado
+                printf("%ld comparações, %ld trocas.\n", comparacoes, trocas);
+
+                comparacoes = trocas = 0;
+                printf("\nOrdenação com ShellSort com espaçamento múltiplo de 2 \n");
+                copia_vetor(vetor, vetorAux);
+                ShellSort2(vetorAux, &comparacoes, &trocas);  //ordena com shellsort c espacamento de 2
+                //imprime_vetor(vetorAux);
+                printf("%ld comparações, %ld trocas.\n", comparacoes, trocas);
+
+                comparacoes = trocas = 0;
+                printf("\nOrdenação com ShellSort com espaçamento múltiplo de 3 \n");
+                copia_vetor(vetor, vetorAux);
+                ShellSort3(vetorAux, &comparacoes, &trocas);  //ordena com shellsort c espacamento de 3
+                //imprime_vetor(vetorAux);
+                printf("%ld comparações, %ld trocas.\n", comparacoes, trocas);
+
+                comparacoes = trocas = 0;
+                printf("\nOrdenação com QuickSort com pivô no início \n");
+                copia_vetor(vetor, vetorAux);
+                QuickSort1(vetorAux, 0, TAM - 1, &comparacoes, &trocas);  //ordena com quicksort c pivo no inicio
+                //imprime_vetor(vetorAux);
+                printf("%ld comparações, %ld trocas.\n", comparacoes, trocas);
+
+                comparacoes = trocas = 0;
+                printf("\nOrdenação com QuickSort com pivô no final \n");
+                copia_vetor(vetor, vetorAux);
+                QuickSort2(vetorAux, 0, TAM - 1, &comparacoes, &trocas);  //ordena com quicksort c pivo no final
+                //imprime_vetor(vetorAux);
+                printf("%ld comparações, %ld trocas.\n", comparacoes, trocas);
+                break;
+
+            case 4:  //realiza buscas no vetor
+                int opcaoBusca;
+
+                printf("1. Digitar um elemento para buscar\n");
+                printf("2. Gerar um elemento aleatório para buscar\n");
+                printf("Escolha uma opção: ");
+                scanf("%d", &opcaoBusca);
+
+                if (opcaoBusca == 1) {
+                    printf("\nElemento a ser buscado: ");
+                    scanf("%d", &elemento);  // le o elemento a ser buscado
+                } else if (opcaoBusca == 2) {
+                    elemento = 0 + rand() % (2048 - 0 + 1);  //gera um n aleatorio para buscar
+                    printf("\nElemento a ser buscado: %d", elemento);
+                }
+
+                //pesquisa sequencial
+                comparacoes = 0;
+                printf("\nPesquisa Sequencial:\n");
+                posicao = PesquisaSequencial(vetor, elemento, &comparacoes);
+                Pesquisas(posicao, &comparacoes); //exibe o resultado da pesquisa
+
+                //pesquisa binaria
+                printf("\nPesquisa Binária:\n");
+                copia_vetor(vetor, vetorAux);
+                SelectionSort(vetorAux, &comparacoes, &trocas);  //ordena o vetor antes de realizar a pesquisa binária
+
+                comparacoes = 0;
+                posicao = PesquisaBinaria(vetorAux, elemento, &comparacoes);
+                Pesquisas(posicao, &comparacoes);  //exibe o resultado da pesquisa
+                break;
+
+            case 5:  //executa 1000 vezes
+                printf("Executando 1000 vezes cada algoritmo de ordenacao...\n");
+                long comparacoesSelection[EXECUCOES], comparacoesShell2[EXECUCOES], comparacoesShell3[EXECUCOES], comparacoesQuick1[EXECUCOES], comparacoesQuick2[EXECUCOES], comparacoesPesqSeq[EXECUCOES], comparacoesPesBin[EXECUCOES];
+                double media, desvioPadrao;
+                media = desvioPadrao = 0;
+
+                //executa os algoritmos 1000 vezes e armazena as comparacoes realizadas
+                for (int i = 0; i < 1000; i++) {
+                    gerar_vetor(vetor); //gera um vetor diferente cada vez p obter resultados
+                    comparacoes = 0;
+                    SelectionSort(vetor, &comparacoes, &trocas);
+                    comparacoesSelection[i] = comparacoes; //vai colocando o nome de comparacoes em cada vetor p dps calcular tudo
+
+                    comparacoes = 0;
+                    ShellSort2(vetor, &comparacoes, &trocas);
+                    comparacoesShell2[i] = comparacoes;
+
+                    comparacoes = 0;
+                    ShellSort3(vetor, &comparacoes, &trocas);
+                    comparacoesShell3[i] = comparacoes;
+
+                    comparacoes = 0;
+                    QuickSort1(vetor, 0, TAM - 1, &comparacoes, &trocas);
+                    comparacoesQuick1[i] = comparacoes;
+
+                    comparacoes = 0;
+                    QuickSort2(vetor, 0, TAM - 1, &comparacoes, &trocas);
+                    comparacoesQuick2[i] = comparacoes;
+
+                    elemento = 0 + rand() % (2048 - 0 + 1); //p buscar um elemento nas pesquisas
+
+                    comparacoes = 0;
+                    PesquisaBinaria(vetor, elemento, &comparacoes);
+                    comparacoesPesBin[i] = comparacoes;
+
+                    comparacoes = 0;
+                    PesquisaSequencial(vetor, elemento, &comparacoes);
+                    comparacoesPesqSeq[i] = comparacoes;
+
+                }
+
+                //comeca a chamar a funcao de estatisticas p calcular a media e o desvio padrao para cada algoritmo
+                printf("Estatisticas das 1000 execuções:\n");
+
+                //selectionsort
+                //calculaEstatisticas(comparacoesSelection, 1000, &media, &desvioPadrao);
+                mediaedesvio(comparacoesSelection, &media, &desvioPadrao);
+                printf("SelectionSort:\n");
+                printf("\n Media de comparações é de %.2f e desvio padrão de comparações é de %.2f\n", media, desvioPadrao);
+
+                //shellsort com espacamento 2
+                //calculaEstatisticas(comparacoesShell2, 1000, &media, &desvioPadrao);
+                mediaedesvio(comparacoesShell2, &media, &desvioPadrao);
+                printf("\n ShellSort (espaçamento 2):\n");
+                printf("Media de comparações é de %.2f e desvio padrão de comparações é de %.2f\n", media, desvioPadrao);
+
+                // shellsort com espaamento 3
+                //calculaEstatisticas(comparacoesShell3, 1000, &media, &desvioPadrao);
+                mediaedesvio(comparacoesShell3, &media, &desvioPadrao);
+                printf("\n ShellSort (espaçamento 3):\n");
+                printf("Media de comparações é de %.2f e desvio padrão de comparações é de %.2f\n", media, desvioPadrao);
+
+                // quicksort c pivo no inicio
+                //calculaEstatisticas(comparacoesQuick1, 1000, &media, &desvioPadrao);
+                mediaedesvio(comparacoesQuick1, &media, &desvioPadrao);
+                printf("\n QuickSort (pivô no início):\n");
+                printf("Media de comparações é de %.2f e desvio padrão de comparações é de %.2f\n", media, desvioPadrao);
+
+                //quicksort c pivo no final
+               // calculaEstatisticas(comparacoesQuick2, 1000, &media, &desvioPadrao);
+                mediaedesvio(comparacoesQuick2, &media, &desvioPadrao);
+                printf("\n QuickSort (pivô no final):\n");
+                printf("Media de comparações é de %.2f e desvio padrão de comparações é de %.2f\n", media, desvioPadrao);
+
+                //pesquisa binaria
+                //calculaEstatisticas(comparacoesPesBin, 1000, &media, &desvioPadrao);
+                mediaedesvio(comparacoesPesBin, &media, &desvioPadrao);
+                printf("\n Pesquisa Binaria:\n");
+                printf("Media de comparações é de %.2f e desvio padrão de comparações é de %.2f\n", media, desvioPadrao);
+
+                //pesquisa sequencial
+                //calculaEstatisticas(comparacoesPesqSeq, 1000, &media, &desvioPadrao);
+                mediaedesvio(comparacoesPesqSeq, &media, &desvioPadrao);
+                printf("\n Pesquisa Sequencial:\n");
+                printf("Media de comparações é de %.2f e desvio padrão de comparações é de %.2f\n", media, desvioPadrao);
+
+                break;
+            
+            case 0:  // sai do programa
+                printf("xauuu!\n");
+                break;
+
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+                break;
+        }
+
+    } while (opcao != 0);
+
+    return 0;
+}

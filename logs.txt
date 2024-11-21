@@ -1,0 +1,487 @@
+log1:=====================
+
+Trabalho de Ordenação e Pesquisa
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 1
+
+Novo vetor gerado!
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 2
+
+Exibindo, respectivamente, os 10 primeiros e as 10 últimas posições do vetor: 
+333 36 902 515 868 60 211 442 474 796 
+190 747 461 26 234 369 395 538 585 731 
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 3
+
+
+Ordenação com Selection Sort 
+2096128 comparações, 2034 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 2 
+44506 comparações, 44506 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 3 
+49636 comparações, 49636 trocas.
+
+Ordenação com QuickSort com pivô no início 
+10886 comparações, 4001 trocas.
+
+Ordenação com QuickSort com pivô no final 
+16390 comparações, 5621 trocas.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 4
+
+1. Digitar um elemento para buscar
+2. Gerar um elemento aleatório para buscar
+Escolha uma opção: 2
+
+Elemento a ser buscado: 722
+Pesquisa Sequencial:
+Elemento encontrado na posição 1779 após 1780 comparações.
+
+Pesquisa Binária:
+Elemento encontrado na posição 1436 após 11 comparações.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 5
+
+Executando 1000 vezes cada algoritmo de ordenacao...
+Estatisticas das 1000 execuções:
+SelectionSort:
+
+ Media de comparações é de 2096128.00 e desvio padrão de comparações é de 0.00
+
+ ShellSort (espaçamento 2):
+Media de comparações é de 0.00 e desvio padrão de comparações é de 0.00
+
+ ShellSort (espaçamento 3):
+Media de comparações é de 0.00 e desvio padrão de comparações é de 0.00
+
+ QuickSort (pivô no início):
+Media de comparações é de 2878.14 e desvio padrão de comparações é de 19.47
+
+ QuickSort (pivô no final):
+Media de comparações é de 1249154.19 e desvio padrão de comparações é de 11877.06
+
+ Pesquisa Binaria:
+Media de comparações é de 10.61 e desvio padrão de comparações é de 1.80
+
+ Pesquisa Sequencial:
+Media de comparações é de 1585.95 e desvio padrão de comparações é de 645.11
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 0
+
+xauuu!
+
+log2:===============
+
+Trabalho de Ordenação e Pesquisa
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 1
+
+Novo vetor gerado!
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 2
+
+Exibindo, respectivamente, os 10 primeiros e as 10 últimas posições do vetor: 
+626 655 645 297 850 813 386 821 924 626 
+588 592 62 174 98 51 183 915 912 491 
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 3
+
+
+Ordenação com Selection Sort 
+2096128 comparações, 2042 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 2 
+38560 comparações, 38560 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 3 
+64241 comparações, 64241 trocas.
+
+Ordenação com QuickSort com pivô no início 
+11006 comparações, 4051 trocas.
+
+Ordenação com QuickSort com pivô no final 
+13567 comparações, 5676 trocas.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 4
+
+1. Digitar um elemento para buscar
+2. Gerar um elemento aleatório para buscar
+Escolha uma opção: 2
+
+Elemento a ser buscado: 169
+Pesquisa Sequencial:
+Elemento não encontrado após 2048 comparações.
+
+Pesquisa Binária:
+Elemento não encontrado após 11 comparações.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 4
+
+1. Digitar um elemento para buscar
+2. Gerar um elemento aleatório para buscar
+Escolha uma opção: 1
+
+Elemento a ser buscado: 473
+
+Pesquisa Sequencial:
+Elemento não encontrado após 2048 comparações.
+
+Pesquisa Binária:
+Elemento não encontrado após 11 comparações.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 5
+
+Executando 1000 vezes cada algoritmo de ordenacao...
+Estatisticas das 1000 execuções:
+SelectionSort:
+
+ Media de comparações é de 2096128.00 e desvio padrão de comparações é de 0.00
+
+ ShellSort (espaçamento 2):
+Media de comparações é de 0.00 e desvio padrão de comparações é de 0.00
+
+ ShellSort (espaçamento 3):
+Media de comparações é de 0.00 e desvio padrão de comparações é de 0.00
+
+ QuickSort (pivô no início):
+Media de comparações é de 2878.25 e desvio padrão de comparações é de 19.43
+
+ QuickSort (pivô no final):
+Media de comparações é de 1249218.40 e desvio padrão de comparações é de 11856.55
+
+ Pesquisa Binaria:
+Media de comparações é de 10.58 e desvio padrão de comparações é de 1.76
+
+ Pesquisa Sequencial:
+Media de comparações é de 1568.99 e desvio padrão de comparações é de 655.70
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 0
+
+xauuu!
+
+log3:==============
+
+Trabalho de Ordenação e Pesquisa
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 1
+
+Novo vetor gerado!
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 1
+
+Novo vetor gerado!
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 1
+
+Novo vetor gerado!
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 1
+
+Novo vetor gerado!
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 2
+
+Exibindo, respectivamente, os 10 primeiros e as 10 últimas posições do vetor: 
+473 94 324 139 864 61 887 250 456 410 
+876 942 976 382 535 894 989 1011 987 564 
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 3
+
+
+Ordenação com Selection Sort 
+2096128 comparações, 2040 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 2 
+55229 comparações, 55229 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 3 
+52649 comparações, 52649 trocas.
+
+Ordenação com QuickSort com pivô no início 
+10846 comparações, 3982 trocas.
+
+Ordenação com QuickSort com pivô no final 
+15108 comparações, 5640 trocas.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 4
+
+1. Digitar um elemento para buscar
+2. Gerar um elemento aleatório para buscar
+Escolha uma opção: 2
+
+Elemento a ser buscado: 714
+Pesquisa Sequencial:
+Elemento encontrado na posição 1133 após 1134 comparações.
+
+Pesquisa Binária:
+Elemento encontrado na posição 1392 após 11 comparações.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 2
+
+Exibindo, respectivamente, os 10 primeiros e as 10 últimas posições do vetor: 
+473 94 324 139 864 61 887 250 456 410 
+876 942 976 382 535 894 989 1011 987 564 
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 2
+
+Exibindo, respectivamente, os 10 primeiros e as 10 últimas posições do vetor: 
+473 94 324 139 864 61 887 250 456 410 
+876 942 976 382 535 894 989 1011 987 564 
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 5
+
+Executando 1000 vezes cada algoritmo de ordenacao...
+Estatisticas das 1000 execuções:
+SelectionSort:
+
+ Media de comparações é de 2096128.00 e desvio padrão de comparações é de 0.00
+
+ ShellSort (espaçamento 2):
+Media de comparações é de 0.00 e desvio padrão de comparações é de 0.00
+
+ ShellSort (espaçamento 3):
+Media de comparações é de 0.00 e desvio padrão de comparações é de 0.00
+
+ QuickSort (pivô no início):
+Media de comparações é de 2878.27 e desvio padrão de comparações é de 19.41
+
+ QuickSort (pivô no final):
+Media de comparações é de 1249248.55 e desvio padrão de comparações é de 11842.24
+
+ Pesquisa Binaria:
+Media de comparações é de 10.64 e desvio padrão de comparações é de 1.76
+
+ Pesquisa Sequencial:
+Media de comparações é de 1586.37 e desvio padrão de comparações é de 649.97
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 4
+
+1. Digitar um elemento para buscar
+2. Gerar um elemento aleatório para buscar
+Escolha uma opção: 2
+
+Elemento a ser buscado: 104
+Pesquisa Sequencial:
+Elemento encontrado na posição 203 após 204 comparações.
+
+Pesquisa Binária:
+Elemento encontrado na posição 203 após 9 comparações.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 1
+
+Novo vetor gerado!
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 3
+
+
+Ordenação com Selection Sort 
+2096128 comparações, 2034 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 2 
+57177 comparações, 57177 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 3 
+49588 comparações, 49588 trocas.
+
+Ordenação com QuickSort com pivô no início 
+10894 comparações, 4004 trocas.
+
+Ordenação com QuickSort com pivô no final 
+15437 comparações, 5596 trocas.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 1
+
+Novo vetor gerado!
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair
+Escolha uma opção: 3
+
+
+Ordenação com Selection Sort 
+2096128 comparações, 2040 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 2 
+54568 comparações, 54568 trocas.
+
+Ordenação com ShellSort com espaçamento múltiplo de 3 
+47700 comparações, 47700 trocas.
+
+Ordenação com QuickSort com pivô no início 
+10780 comparações, 3935 trocas.
+
+Ordenação com QuickSort com pivô no final 
+16540 comparações, 5638 trocas.
+
+1. Gerar novo vetor aleatório
+2. Exibir os primeiros elementos do vetor
+3. Ordenar o vetor (todos os algoritmos)
+4. Realizar buscas no vetor
+5. Executar o programa 1000 vezes
+0. Sair

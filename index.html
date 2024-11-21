@@ -1,40 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Trabalho de Ordenação e Pesquisa</title>
   </head>
 
   <body>
     <div class="navbar">
-      <a href="index.html">Home</a>
-      <a href="portifolio.html">Portifólio</a>
-      <a href="curriculo.html">Currículo</a>
-      <a href="ice_fishing_Pag.html">Ice Fishing</a>
+      <a href="index.html">Trabalho</a>
+      <a href="logs.txt">Logs</a>
+      <a href="main.txt">main.c</a>
+      <a href="function.txt">function.c</a>
+      <a href="functionB.txt">function.h</a>
+      <a href="makefile.txt">makefile</a>
+    </div>
+
+    <div class="header-content">
+        <h2>Universidade Federal do Paraná</h2>
+        <h3>Departamento de Informática</h3>
+        <h4>Disciplina CI1056 - Algoritmos e Estruturas de Dados II</h4>
+        <h5>2º Período do BCC & IBM</h5>
+        <h6>Prof. Elias P. Duarte Jr.</h6>
+        <h6> Aluna: Gabriela da Rocha de Oliveira</h6>
+        <p><strong>Trabalho Prático (Individual): Ordenação e Pesquisa</strong></p>
     </div>
 
     <section class="index">
-      <img src="Assets/fotoPerfil.jpeg" alt="Gabriela" />
-      <h1>Gabriela da Rocha</h1>
-      <p>
-        Eu sou Gabriela e tenho 17 anos. Concluí meus estudos no IFPR com
-        técnico integrado em Programação de Jogos Digitais, onde obtive nas
-        linguagens de programação C++, JavaScript, HTML, CSS e C#, também
-        conhecimento básico com Unity e Blender. Eu procuro ingressar na área de
-        Informática Biomédica, trabalhando com computação aplicada na área da
-        saúde.
-      </p>
-      <div class="contato">
-        <h3>Contato</h1>
-        <b>Email: </b><a href="mailto:" target="_blank">gabbrielaroc@gmail.com</a><br>
-        <b>Github: </b><a href="https://github.com/yapolu" target="_blank">yapolu</a>
-      </div>
-      <a href="curriculo.html" target="_self"><button class="botaoIndex">Acesse meu Currículo</button></a>
-      <a href="portifolio.html" target="_self"><button class="botaoIndex">Acesse meu Portfolio</button></a>
-    </section>
+        <h1 class="titulo-com-borda">Trabalho de Ordenação e Pesquisa</h1>
+        <p>O objetivo deste trabalho foi implementar um programa que permita a ordenação e busca de elementos em um vetor utilizando diferentes algoritmos. Foram incluídos os algoritmos de ordenação ShellSort, QuickSort e SelectionSort, além das funções de Busca Sequencial e Busca Binária. O programa foi desenvolvido com um menu interativo, onde o usuário pode gerar um novo vetor, realizar a ordenação, executar buscas e visualizar os resultados.</p>
 
-    <footer>
-      <p>Copyright</p>
-    </footer>
+        <ul>
+            <li><strong>1. Metodologia</strong>
+                <p>O trabalho foi iniciado com a construção do esqueleto do arquivo main.c, onde criei o menu interativo para permitir que o usuário execute as funcionalidades de forma intuitiva. O menu foi elaborado com as seguintes opções:</p>
+                <ul>
+                    <li><strong>Gerar um novo vetor:</strong> Para iniciar, criei uma função que gera um vetor de números aleatórios entre 0 e 2048 utilizando a função rand(). O vetor gerado foi armazenado em uma variável vetor, com a possibilidade de gerar novos vetores sempre que o usuário escolhesse essa opção.</li>
+                    <li><strong>Exibir o vetor:</strong> Em seguida, implementei a função de exibição do vetor, que mostra de forma compacta as 10 primeiras e as 10 últimas posições do vetor.</li>
+                    <li><strong>Ordenar o vetor:</strong> O próximo passo foi implementar a ordenação do vetor utilizando três algoritmos: ShellSort, QuickSort e SelectionSort. Para garantir que o vetor original não fosse alterado, criei uma cópia do vetor antes de cada ordenação utilizando a função copia_vetor(). Cada algoritmo é o mesmo dado em sala de aula, apenas com as modificações de incrementação das variáveis (troca) e (comparacoes).</li>
+                    <li><strong>Realizar buscas no vetor:</strong> Para permitir que o usuário busque elementos no vetor, criei as funções Busca Sequencial e Busca Binária. As buscas foram a fim de mostrar ao usuário o número de comparações realizadas durante o processo e informar se o elemento foi encontrado ou não. O usuário tem a opção de digitar um valor para ser buscado ou escolher um número aleatoriamente gerado.</li>
+                    <li><strong>Executar 1000 testes:</strong> Também foi implementado a função que executa 1000 testes de ordenação e busca para cada algoritmo, onde é calculado a média e o desvio padrão do número de comparações utilizadas em cada caso.</li>
+                    <li><strong>Encerrar o programa:</strong> Para finalizar, implementei uma função que encerra a execução do programa quando o usuário escolhe a opção correspondente no menu.</li>
+                    <li>Após cada execução de uma função (exceto ao escolher a opção de encerrar), o menu é apresentado novamente ao usuário, permitindo a realização de novas ações.</li>
+                </ul>
+            </li>
+            <li><strong>2. Funções implementadas</strong>
+                <p> </p>
+                <ul>
+                    <li><strong>Função de Geração do Vetor Aleatório:</strong>  Implementei duas versões do algoritmo de ShellSort utilizando a sequência de múltiplo de 2 (1, 2, 4, 8, 16,...) e outra de 
+                    </li>
+                    <li><strong>Função de Exibição do Vetor:</strong> Essa função foi criada para exibir as 10 primeiras e 10 últimas posições do vetor.</li>
+                    <li><strong>Função de Cálculo de Estatísticas:</strong> Essa função é a que calcula o número médio de comparações e trocas realizadas após várias execuções dos algoritmos, além do desvio padrão.</li>
+                </ul>
+            </li>
+
+            <li><strong>3. Funções de Ordenação e Busca</strong>
+              <p></p>
+              <ul>
+                  <li><strong>ShellSort:</strong> Implementei duas versões do algoritmo de ShellSort utilizando a sequência de múltiplo de 2 (1, 2, 4, 8, 16...) e outra de 3 (1, 3, 9, 27, 81...) </li>
+                  <li><strong>QuickSort:</strong> Implementei duas versões do algoritmo de QuickSort utilizando um pivô no início do vetor e outro com o pivô no final.</li>
+                  <li><strong>SelectionSort:</strong> Este algoritmo foi implementado de forma simples, e foi a minha escolha pois eu sempre escolho ele em ordenação de vetor por ser tão fácil de lembrar a lógica do algoritmo. </li>
+                  <li><strong>Pesquisa Binária:</strong> A busca binária foi implementada para realizar buscas eficientes em vetores previamente ordenados. A função exibe o número de comparações realizadas e se o valor foi encontrado ou não.    </li>
+                  <li><strong>Pesquisa Sequencial:</strong> A  função de busca sequencial percorre o vetor e conta o número de comparações até encontrar o valor desejado. Também exibe se o elemento foi encontrado ou não. </li>
+                </ul>
+            </li>
+
+            <li><strong>4. Resultados</strong>
+              <p></p>
+              <ul>
+                <li><strong> Algoritmos de Ordenação:</strong> Cada algoritmo teve um desempenho distinto em termos de número de comparações e trocas.  Como esperado, o SelectionSort é o mais lento, com um número altíssimo de comparações, o que o torna ineficiente para a ordenação de vetor de 1024 posições.
+                  O ShellSort com espaçamento múltiplo de 2 e 3 apresenta um número de comparações consideravelmente menor que o SelectionSort, mas ainda maior que o QuickSort.
+                  O QuickSort é o mais eficiente em termos de comparações. Entre as variações de pivô, o QuickSort com pivô no início teve menos comparações, sendo mais eficiente do que com o pivô no final do vetor. Neste caso do código, o QuickSort foi melhor do que o ShellSort, tanto em termos de número de comparações quanto de trocas.</li>
+                <li><strong> Busca Sequencial vs Busca Binária:</strong> A Busca Binária foi claramente mais eficiente do que a Busca Sequencial em termos de comparações. Isso se deve pela crescimento linear de número de comparações que a Pesquisa Sequencial faz, enquanto a Pesquisa Binária faz isso logaritmicamente. </li>
+              </ul>
+
+            </li>
+
+
+
+
+        </ul>
+
+
+        <a href="logs.txt" target="_self"><button class="botaoIndex">Logs</button></a>
+    </section>
   </body>
 </html>

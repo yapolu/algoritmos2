@@ -1,0 +1,40 @@
+#ifndef FUNCOES_H
+#define FUNCOES_H
+
+#define TAM 2048
+#define MAX 1024
+#define EXECUCOES 1000
+
+void gerar_vetor(int vetor[]);
+
+void copia_vetor(int vetor[], int vetorAux[]);
+
+//void imprime_vetor(int vetor[]);
+
+void exibe_vetor(int vetor[]);
+
+void SelectionSort(int vetor[], long *comparacoes, long *trocas);
+
+void ShellSort2(int vetor[], long *comparacoes, long *trocas);
+
+void ShellSort3(int vetor[], long *comparacoes, long *trocas);
+
+void QuickSort1(int vetor[], int esq, int dir, long *comparacoes, long *trocas);
+
+void QuickSort2(int vetor[], int esq, int dir, long *comparacoes, long *trocas);
+
+void ParticaoEsq(int vetor[], int esq, int dir, int *pos_pivo, long *comparacoes, long *trocas);
+
+void ParticaoDir(int vetor[], int esq, int dir, int *pos_pivo, long *comparacoes, long *trocas);
+
+int PesquisaSequencial(int vetor[], int elemento, long *comparacoes);
+
+int PesquisaBinaria(int vetor[], int elemento, long *comparacoes);
+
+void Pesquisas(int posicao, long *comparacoes);
+
+//void calculaEstatisticas(long valores[], int n, double *media, double *desvioPadrao);
+
+void mediaedesvio(long comp[], double *media, double *desvio);
+
+#endif

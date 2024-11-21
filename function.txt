@@ -1,0 +1,304 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "function.h"
+#include <math.h>
+#include <time.h>
+
+// gera vetor com números aleatórios
+void gerar_vetor(int vetor[]) {
+    int i;
+
+    for (i = 0; i < TAM; i++)
+        vetor[i] = rand() % (MAX + 1);  // valores entre 0 e MAX
+}
+
+// exibe os 10 primeiros e 10 ultimos elementos do vetor
+void exibe_vetor(int vetor[]) {
+    int i;
+
+    // imprime os 10 primeiros elementos
+    for (i = 0; i < 10; i++)
+        printf("%d ", vetor[i]);
+    printf("\n");
+
+    // imprime os 10 ultimos elementos
+    for (i = TAM - 10; i < TAM; i++)
+        printf("%d ", vetor[i]);
+    printf("\n");
+}
+
+// imprime todos os elementos do vetor
+/*void imprime_vetor(int vetor[]) {
+    int i;
+
+    for (i = 0; i < TAM; i++)
+        printf("%d ", vetor[i]);
+
+    printf("\n");
+}*/
+
+// copia um vetor para outro
+void copia_vetor(int vetor[], int vetorAux[]) {
+    int i;
+
+    for (i = 0; i < TAM; i++)
+        vetorAux[i] = vetor[i];
+}
+
+// ALGORITMOS DE ORDENAÇÃO
+
+// ordenação com selection sort
+void SelectionSort(int vetor[], long *comparacoes, long *trocas) {
+    int i, j;
+
+    for (i = 0; i < TAM - 1; i++) {
+        int menor = i;
+        for (j = i + 1; j < TAM; j++) {
+
+            (*comparacoes)++;
+            if (vetor[j] < vetor[menor]) {
+                menor = j;
+            }
+        }
+
+        if (menor != i) {
+            int aux;
+
+            aux = vetor[i];
+            vetor[i] = vetor[menor];
+            vetor[menor] = aux;
+            (*trocas)++;
+        }
+    }
+}
+
+// ordenação do shellsort com espacamento de multiplos de 2
+void ShellSort2(int vetor[], long *comparacoes, long *trocas) {
+    int i, j, aux;
+    int k = 1;
+
+    do {
+        k = k * 2; //define o espacamento
+    } while (k <= TAM);
+
+    do {
+        k = k / 2;
+
+        for (i = k; i < TAM; i++) {
+            aux = vetor[i];
+            j = i;
+
+            while (j >= k && vetor[j - k] > aux) {
+                (*comparacoes)++;
+                vetor[j] = vetor[j - k];
+                j = j - k;
+                (*trocas)++;
+            }
+
+            vetor[j] = aux;
+        }
+
+    } while (k > 1);
+}
+
+// ordenação do shellsort com espaçamento de múltiplos de 3
+void ShellSort3(int vetor[], long *comparacoes, long *trocas) {
+    int i, j, aux;
+    int k = 1;
+
+    do {
+        k = k * 3; //define o espacamento
+    } while (k <= TAM);
+
+    do {
+        k = k / 3;
+
+        for (i = k; i < TAM; i++) {
+            aux = vetor[i];
+            j = i;
+
+            while (j >= k && vetor[j - k] > aux) {
+                (*comparacoes)++;
+                vetor[j] = vetor[j - k];
+                j = j - k;
+                (*trocas)++;
+            }
+
+            vetor[j] = aux;
+        }
+
+    } while (k > 1);
+}
+
+// partição do quicksort com o pivô na primeira posição
+void ParticaoEsq(int vetor[], int esq, int dir, int *pos_pivo, long *comparacoes, long *trocas) {
+    int i, j, pivo, aux;
+
+    pivo = vetor[esq];
+    i = esq; 
+    j = dir;
+
+    while (i < j) {
+
+        (*comparacoes)++;
+        while ((vetor[i] <= pivo) && i < dir)
+            i++;
+
+        (*comparacoes)++;
+        while ((vetor[j] > pivo) && j > esq)
+            j--;
+
+        if (i < j) {
+            aux = vetor[i];
+            vetor[i] = vetor[j];
+            vetor[j] = aux;
+            (*trocas)++;
+        }
+    }
+
+    vetor[esq] = vetor[j];
+    vetor[j] = pivo;
+    *pos_pivo = j;
+}
+
+// partição do quicksort com o pivô na última posição
+void ParticaoDir(int vetor[], int esq, int dir, int *pos_pivo, long *comparacoes, long *trocas) {
+    int i, j, pivo, aux;
+
+    pivo = vetor[dir];  // Pivô é o último elemento
+    i = esq - 1;  // Inicia i antes de esq
+    j = dir;  // j começa no final (dir)
+
+    while (1) {
+        // Encontra elemento maior que o pivô (para mover para a direita)
+        while (vetor[++i] < pivo) {  // i é incrementado antes de comparar
+            (*comparacoes)++;
+        }
+
+        // Encontra elemento menor que o pivô (para mover para a esquerda)
+        while (vetor[--j] > pivo) {  // j é decrementado antes de comparar
+            (*comparacoes)++;
+            if (j <= i) break;  // Se j encontrar i, sai do loop
+        }
+
+        // Se j >= i, a partição está feita
+        if (i >= j) break;
+
+        // Troca os elementos
+        aux = vetor[i];
+        vetor[i] = vetor[j];
+        vetor[j] = aux;
+        (*trocas)++;
+    }
+
+    // Coloca o pivô na posição correta
+    aux = vetor[i];
+    vetor[i] = vetor[dir];
+    vetor[dir] = aux;
+    (*trocas)++;
+
+    *pos_pivo = i;  // Atualiza a posição do pivô
+}
+
+// quicksort do pivô no início
+void QuickSort1(int vetor[], int esq, int dir, long *comparacoes, long *trocas) {
+    int pos_pivo;
+
+    if (esq < dir) {
+        ParticaoEsq(vetor, esq, dir, &pos_pivo, comparacoes, trocas);
+        QuickSort1(vetor, esq, pos_pivo - 1, comparacoes, trocas);
+        QuickSort1(vetor, pos_pivo + 1, dir, comparacoes, trocas);
+    }
+}
+
+// quicksort do pivô no final
+void QuickSort2(int vetor[], int esq, int dir, long *comparacoes, long *trocas) {
+    int pos_pivo;
+
+    if (esq < dir) {
+        ParticaoDir(vetor, esq, dir, &pos_pivo, comparacoes, trocas);
+        QuickSort2(vetor, esq, pos_pivo - 1, comparacoes, trocas);
+        QuickSort2(vetor, pos_pivo + 1, dir, comparacoes, trocas);
+    }
+}
+
+// ALGORITMOS DE PESQUISA
+
+// pesquisa sequencial
+int PesquisaSequencial(int vetor[], int elemento, long *comparacoes) {
+    int i;
+
+    for (i = 0; i < TAM; i++) {
+
+        (*comparacoes)++;
+        if (vetor[i] == elemento)
+            return i;  // retorna a posição do elemento encontrado
+    }
+    return -1;  // elemento não encontrado
+}
+
+// pesquisa binária
+int PesquisaBinaria(int vetor[], int elemento, long *comparacoes) {
+    int inicio = 0, fim = TAM - 1, meio;
+
+    while (inicio <= fim) {
+
+        meio = (inicio + fim) / 2;
+
+        (*comparacoes)++;
+        if (vetor[meio] == elemento)
+            return meio;  // retorna a posição do elemento encontrado
+        else if (vetor[meio] < elemento)
+            inicio = meio + 1;
+        else
+            fim = meio - 1;
+    }
+    return -1;  // elemento não encontrado
+}
+
+void Pesquisas(int posicao, long *comparacoes) {
+    if (posicao != -1)
+        printf("Elemento encontrado na posição %d após %ld comparações.\n", posicao, *comparacoes);
+    else
+        printf("Elemento não encontrado após %ld comparações.\n", *comparacoes);
+}
+
+/*void calculaEstatisticas(long valores[], int n, double *media, double *desvioPadrao) {
+    double soma = 0.0;
+    
+    //calcula a soma de todos os valores
+    for (int i = 0; i < n; i++) {
+        soma += valores[i];
+    }
+
+    //calcula a media dos valores
+    *media = soma / n;
+
+    double somaQuadrados = 0.0;
+    
+    //calcula a soma dos quadrados das diferenças entre cada valor e a média
+    for (int i = 0; i < n; i++) {
+        somaQuadrados += pow(valores[i] - *media, 2);
+    }
+
+    // Calcula o desvio padrão (raiz quadrada da média dos quadrados)
+    // Usando (n - 1) para amostra, se for uma população, use n.
+    *desvioPadrao = sqrt(somaQuadrados / (n));
+}*/
+
+void mediaedesvio(long comp[], double *media, double *desvio) {
+    double soma = 0.0, somaQuadrados = 0.0;
+    
+    // Calcula a soma dos valores e a soma dos quadrados
+    for (int i = 0; i < EXECUCOES; i++) {
+        soma += comp[i];
+        somaQuadrados += comp[i] * comp[i];
+    }
+
+    // Calcula a média
+    *media = soma / EXECUCOES;
+
+    // Calcula o desvio padrão
+    *desvio = sqrt((somaQuadrados / EXECUCOES) - (*media * *media));
+}
+

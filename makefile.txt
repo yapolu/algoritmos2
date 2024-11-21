@@ -1,0 +1,28 @@
+CC = gcc
+CFLAGS = -Wall -g
+LDFLAGS = -lm  # Adiciona a flag para a biblioteca matemática
+
+# Definindo os arquivos objeto
+OBJ = main.o function.o
+
+# Nome do programa a ser gerado
+EXEC = programa
+
+# Comando para compilar o programa
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+	$(CC) $(OBJ) -o $(EXEC) $(LDFLAGS)
+
+# Como compilar o arquivo main.c
+main.o: main.c function.h
+	$(CC) $(CFLAGS) -c main.c
+
+# Como compilar o arquivo function.c
+function.o: function.c function.h
+	$(CC) $(CFLAGS) -c function.c
+
+# Limpeza de arquivos objetos e binário
+clean:
+	rm -f $(OBJ) $(EXEC)
+
